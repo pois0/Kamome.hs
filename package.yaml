@@ -1,0 +1,57 @@
+name:                blog-engine
+version:             0.1.0.0
+github:              "pois0/blog-engine"
+license:             Apache-2.0
+author:              "pois"
+maintainer:          "dev@pois.jp"
+copyright:           "2020 pois"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/pois0/blog-engine#readme>
+
+dependencies:
+- base >= 4.9.1 && < 5
+- extra >= 1.6.17
+- relude >= 0.5.0
+- pandoc >= 2.9.2.1
+- yaml >= 0.11.4.0
+- text >= 1.2.4.0
+- time >= 1.8.0.2
+- directory >= 1.3.6.0
+- split >= 0.2.3.4
+- shakespeare >= 2.0.20
+
+library:
+  source-dirs: src
+
+executables:
+  blog-engine-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - blog-engine
+
+tests:
+  blog-engine-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - blog-engine
