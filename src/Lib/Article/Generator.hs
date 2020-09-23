@@ -2,6 +2,7 @@
 
 module Lib.Article.Generator where
 
+import Control.Concurrent.Async (forConcurrently_)
 import Data.List.Split (chunksOf)
 import Data.Text (Text, unpack)
 import qualified Data.Text.IO as TIO
@@ -49,14 +50,14 @@ generateArticles output articles = do
   let dir = articleRootDir output
   exist <- doesDirectoryExist dir
   if not exist then createDirectory dir else mempty
-  mapM_ (generateArticle $ dir ++ "/") articles 
+  forConcurrently_ articles $ generateArticle $ dir ++ "/" 
 
 generateIndex :: FilePath -> ([Article], IndexInfo) -> IO ()
 generateIndex output (articles, IndexInfo {current = i, prev = prev, next = next}) = do
   writeFile (output ++ indexToFileName i <.> "html") $ renderHtml $(shamletFile "templates/index.hamlet")
 
 generateIndices :: Int -> FilePath -> [Article] -> IO ()
-generateIndices n output articles = mapM_ (generateIndex $ output ++ "/") $ toIndexInfo $ chunksOf n articles
+generateIndices n output articles = forConcurrently_ (toIndexInfo $ chunksOf n articles) $ generateIndex $ output ++ "/"
 
 generateTagIndex :: FilePath -> Text -> ([Article], IndexInfo) -> IO ()
 generateTagIndex output tag (articles, IndexInfo {current = i, prev = prev, next = next}) = do
@@ -67,13 +68,13 @@ generateTagIndices n output list = do
   let dir = tagRootDir output
   exist <- doesDirectoryExist dir
   if not exist then createDirectory dir else mempty
-  mapM_ tagHandler list
+  forConcurrently_ list tagHandler
   where
     tagHandler :: (Text, [Article]) -> IO ()
     tagHandler (tag, articles) = do
       exist <- doesDirectoryExist $ tagIndicesDir output tag
       if not exist then createDirectory $ tagIndicesDir output tag else mempty
-      mapM_ (generateTagIndex output tag) $ toIndexInfo $ chunksOf n articles
+      forConcurrently_ (toIndexInfo $ chunksOf n articles) $ generateTagIndex output tag
 
 toIndexInfo :: [[Article]] -> [([Article], IndexInfo)]
 toIndexInfo [] = []

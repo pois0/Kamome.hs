@@ -12,6 +12,7 @@ import Data.Yaml (ParseException)
 import qualified Lib.Article.Meta as M
 import Lib.Article.Meta (Meta)
 import System.Directory (listDirectory)
+import System.FilePath.Posix ((</>), (<.>))
 
 data Article = Article
   { dir :: FilePath
@@ -33,7 +34,7 @@ metaPath :: Article -> FilePath
 metaPath article = dir article ++ metaPos
 
 contentPath :: Article -> FilePath
-contentPath article = dir article ++ "/content.md"
+contentPath article = dir article </> "content" <.> "md"
 
 loadArticle :: FilePath -> IO (Either ParseException Article)
 loadArticle path = do

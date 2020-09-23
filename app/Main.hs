@@ -1,5 +1,6 @@
 module Main where
 
+import Control.Concurrent.Async (forConcurrently_)
 import Data.Either (partitionEithers)
 import Data.Maybe (fromMaybe)
 import Data.Yaml (ParseException)
@@ -40,7 +41,9 @@ main = do
   conf <- loadConfig
   articles <- getArticles . C.repositoryPath $ conf
   checkDir $ C.outputPath conf
-  generateArticles (C.outputPath conf) articles
-  generateIndices (C.articlesPerPage conf) (C.outputPath conf) articles
-  generateTagIndices (C.articlesPerPage conf) (C.outputPath conf) $ classifyByTag articles
-  mempty
+  forConcurrently_
+    [ generateArticles (C.outputPath conf)
+    , generateIndices (C.articlesPerPage conf) (C.outputPath conf)
+    , generateTagIndices (C.articlesPerPage conf) (C.outputPath conf) . classifyByTag
+    ]
+    (\ op -> op articles)
