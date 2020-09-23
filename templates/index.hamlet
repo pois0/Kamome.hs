@@ -1,0 +1,33 @@
+$doctype 5
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="poispois">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="og:url" content="http://blog.pois.jp/#{indexToRelUrl i}">
+        <meta name="og:type" content="website">
+        <meta name="og:site_name" content="Keys to Descension">
+        <meta name="og:title" content="All Articles Page #{i}">
+        <meta name="twitter:creator" content="@poispois0">
+        <link rel="canonical" href="http://blog.pois.jp/#{indexToRelUrl i}">
+        <title>pois' blog
+    <body>
+        <header class="top">
+            <div class="container">
+                <h1><a href="/">Keys to Descension</a></h1>
+        <main class="container">
+            $forall article <- articles
+                <div class="article-card">
+                    <div class="title">
+                        <a href="/p/#{ARTICLE.articleId article}">#{(META.title . ARTICLE.meta) article}
+                        #{((show . META.createdAt) . ARTICLE.meta) article}
+                        tags:
+                        $forall tag <- ((META.tags . ARTICLE.meta) article)
+                            <a class="tag" href="/t/#{tag}">#{tag}
+            <div class="switcher">
+                $maybe ne <- next
+                    <a class="next" href="/#{indexToRelUrl ne}">
+                        &lt; next
+                $maybe pr <- prev
+                    <a class="prev" href="/#{indexToRelUrl pr}">
+                        prev &gt;

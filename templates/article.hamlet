@@ -1,0 +1,29 @@
+$doctype 5
+<html lang="ja">
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+        <meta charset="UTF-8">
+        <meta name="author" content="poispois">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="og:url" content="http://blog.pois.jp/p/#{ARTICLE.articleId article}">
+        <meta name="og:type" content="article">
+        <meta name="og:site_name" content="Keys to Descension">
+        <meta name="og:title" content="#{(META.title . ARTICLE.meta) article}">
+        <meta name="twitter:creator" content="@poispois0">
+        <link rel="canonical" href="http://blog.pois.jp/p/#{ARTICLE.articleId article}">
+        <title>Keys to Ascension
+    <body>
+        <header class="top">
+            <div class="container">
+                <h1>
+                    <a href="/">Keys to Descension
+        <main>
+            <article class="container">
+                <header>
+                    <h1>#{(META.title . ARTICLE.meta) article}
+                    <div class="header-meta">
+                        #{((show . META.createdAt) . ARTICLE.meta) article}
+                        tags:
+                        $forall tag <- ((META.tags . ARTICLE.meta) article)
+                            <a href="/t/#{tag}" class="tag">#{tag}
+                <section class="markdown-body">
+                    #{preEscapedToMarkup content}
