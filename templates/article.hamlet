@@ -1,6 +1,7 @@
 $doctype 5
 <html lang="ja">
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+        <link rel="stylesheet" href="/style.css">
         <meta charset="UTF-8">
         <meta name="author" content="poispois">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -25,5 +26,5 @@ $doctype 5
                         tags:
                         $forall tag <- ((META.tags . ARTICLE.meta) article)
                             <a href="/t/#{tag}" class="tag">#{tag}
-                <section class="markdown-body">
+                <section class="md">
                     #{preEscapedToMarkup content}
