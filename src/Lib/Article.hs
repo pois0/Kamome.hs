@@ -2,6 +2,7 @@
 
 module Lib.Article where
 
+import Data.List (isPrefixOf)
 import qualified Data.List as L
 import Data.List.Extra (groupSort)
 import Data.List.Split (splitOn)
@@ -39,7 +40,7 @@ loadArticle p = fmap (fmap $ Article p) $ M.loadMeta . metaPath $ p
 getArticles :: FilePath -> IO [Either ArticleLoadFailedException Article]
 getArticles repositoryPath = do
   paths <- listDirectory repositoryPath
-  mapM (\p -> either (Left . ArticleLoadFailedException p) Right <$> loadArticle (repositoryPath ++ p)) paths
+  mapM (\p -> either (Left . ArticleLoadFailedException p) Right <$> loadArticle (repositoryPath ++ p)) $ filter (not . isPrefixOf ".") paths
 
 readArticle :: Article -> IO Text
 readArticle = TIO.readFile . contentPath
