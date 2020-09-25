@@ -10,7 +10,7 @@ $doctype 5
         <meta name="og:title" content="#{(META.title . ARTICLE.meta) article}">
         <meta name="twitter:creator" content="@poispois0">
         <link rel="canonical" href="http://blog.pois.jp/p/#{ARTICLE.articleId article}">
-        <title>Keys to Ascension
+        <title>#{(META.title . ARTICLE.meta) article} - Keys to Descension
     <body>
         <header class="top">
             <div class="container">
