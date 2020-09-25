@@ -21,10 +21,10 @@ $doctype 5
                 <div class="article-card">
                     <div class="title">
                         <a href="/p/#{ARTICLE.articleId article}">#{(META.title . ARTICLE.meta) article}
-                        #{((show . META.createdAt) . ARTICLE.meta) article}
-                        tags:
-                        $forall tag <- ((META.tags . ARTICLE.meta) article)
-                            <a class="tag" href="/t/#{tag}">#{tag}
+                    #{((show . META.createdAt) . ARTICLE.meta) article}
+                    tags:
+                    $forall tag <- ((META.tags . ARTICLE.meta) article)
+                        <a class="tag" href="/t/#{tag}">#{tag}
             <div class="switcher">
                 $maybe ne <- next
                     <a class="next" href="/#{indexToRelUrl ne}">
