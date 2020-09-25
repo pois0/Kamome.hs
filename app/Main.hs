@@ -3,22 +3,20 @@ module Main where
 import Control.Concurrent.Async (forConcurrently_)
 import Data.Either (partitionEithers)
 import Data.Maybe (fromMaybe)
-import Data.Yaml (ParseException)
+import Lib.Article (Article, classifyByTag, exception, sortByCreatedAt)
 import qualified Lib.Article as A
 import Lib.Article.Generator (generateArticles, generateIndices, generateTagIndices)
-import Lib.Article (Article, exception, sortByCreatedAt, classifyByTag)
-import qualified Lib.Config as C
-import Lib.Config (Config, repositoryPath)
+import Lib.Config (Config (..), loadConfig, repositoryPath)
 import Relude.List ((!!?))
 import System.Directory (createDirectory, doesDirectoryExist)
 import System.Environment (getArgs)
 import System.Exit (die)
 
-loadConfig :: IO Config
-loadConfig = do
+config :: IO Config
+config = do
   args <- getArgs
-  conf <- C.loadConfig $ fromMaybe "config.yaml" $ args !!? 1
-  either (\ _ -> die "missing config.yaml") return conf
+  conf <- loadConfig $ fromMaybe "config.yaml" $ args !!? 1
+  either (\_ -> die "missing config.yaml") return conf
 
 getArticles :: FilePath -> IO [Article]
 getArticles path = do
@@ -38,12 +36,12 @@ checkDir path = do
 
 main :: IO ()
 main = do
-  conf <- loadConfig
-  articles <- getArticles . C.repositoryPath $ conf
-  checkDir $ C.outputPath conf
+  conf <- config
+  articles <- getArticles . repositoryPath $ conf
+  checkDir $ outputPath conf
   forConcurrently_
-    [ generateArticles (C.outputPath conf)
-    , generateIndices (C.articlesPerPage conf) (C.outputPath conf)
-    , generateTagIndices (C.articlesPerPage conf) (C.outputPath conf) . classifyByTag
+    [ generateArticles (outputPath conf),
+      generateIndices (articlesPerPage conf) (outputPath conf),
+      generateTagIndices (articlesPerPage conf) (outputPath conf) . classifyByTag
     ]
-    (\ op -> op articles)
+    (\op -> op articles)

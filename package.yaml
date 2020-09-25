@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/pois0/blog-engine#readme>
+description:         Please see the README on GitHub at <https://github.com/pois0/BlogEngine#readme>
 
 dependencies:
 - base >= 4.13.0 && < 5
@@ -45,6 +45,7 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -O2
     dependencies:
     - blog-engine
 
