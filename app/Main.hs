@@ -3,7 +3,7 @@ module Main where
 import Control.Concurrent.Async (forConcurrently_)
 import Data.Either (partitionEithers)
 import Data.Maybe (fromMaybe)
-import Lib.Article (Article, classifyByTag, exception, sortByCreatedAt)
+import Lib.Article (Article, classifyByTag, exception, filterByVisibility, sortByCreatedAt)
 import qualified Lib.Article as A
 import Lib.Article.Generator (generateArticles, generateIndices, generateTagIndices)
 import Lib.Config (Config (..), loadConfig, repositoryPath)
@@ -22,7 +22,7 @@ getArticles :: FilePath -> IO [Article]
 getArticles path = do
   dirs <- A.getArticles path
   let (exceptions, articles) = partitionEithers dirs
-  if null exceptions then return $ sortByCreatedAt articles else printMessage exceptions
+  if null exceptions then return $ sortByCreatedAt $ filterByVisibility articles else printMessage exceptions
   where
     printMessage :: [A.ArticleLoadFailedException] -> IO a
     printMessage es = do
