@@ -5,13 +5,13 @@ $doctype 5
         <meta charset="UTF-8">
         <meta name="author" content="poispois">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta property="og:url" content="http://blog.pois.jp/p/#{ARTICLE.articleId article}">
+        <meta property="og:url" content="https://blog.pois.jp/p/#{ARTICLE.articleId article}">
         <meta property="og:type" content="article">
         <meta property="og:site_name" content="Keys to Descension">
         <meta property="og:title" content="#{(META.title . ARTICLE.meta) article}">
         <meta name="twitter:creator" content="@poispois0">
         <meta name="twitter:card" content="summary">
-        <link rel="canonical" href="http://blog.pois.jp/p/#{ARTICLE.articleId article}">
+        <link rel="canonical" href="https://blog.pois.jp/p/#{ARTICLE.articleId article}">
         <title>#{(META.title . ARTICLE.meta) article} - Keys to Descension
     <body>
         <header class="top">
