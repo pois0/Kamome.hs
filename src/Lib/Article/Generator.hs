@@ -26,6 +26,10 @@ indexToFileName :: Int -> String
 indexToFileName 1 = "index"
 indexToFileName n = show n
 
+slash :: Int -> String
+slash 1 = ""
+slash _ = "/"
+
 indexToRelUrl :: Int -> String
 indexToRelUrl 1 = ""
 indexToRelUrl n = show n

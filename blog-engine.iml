@@ -30,122 +30,12 @@
     <orderEntry type="library" name="ghc-boot-th-8.8.4" level="project" />
     <orderEntry type="library" name="async-2.2.2" level="project" />
     <orderEntry type="library" name="blaze-html-0.9.1.2" level="project" />
-    <orderEntry type="library" name="data-default-0.7.1.1" level="project" />
     <orderEntry type="library" name="extra-1.7.8" level="project" />
-    <orderEntry type="library" name="split-0.2.3.4" level="project" />
     <orderEntry type="library" name="hashable-1.3.0.0" level="project" />
     <orderEntry type="library" name="stm-2.5.0.0" level="project" />
     <orderEntry type="library" name="blaze-builder-0.4.1.0" level="project" />
     <orderEntry type="library" name="blaze-markup-0.8.2.7" level="project" />
-    <orderEntry type="library" name="data-default-class-0.1.2.0" level="project" />
-    <orderEntry type="library" name="data-default-instances-containers-0.0.1" level="project" />
-    <orderEntry type="library" name="data-default-instances-dlist-0.0.1" level="project" />
-    <orderEntry type="library" name="data-default-instances-old-locale-0.0.1" level="project" />
     <orderEntry type="library" name="clock-0.8" level="project" />
     <orderEntry type="library" name="process-1.6.9.0" level="project" />
-    <orderEntry type="library" name="dlist-0.8.0.8" level="project" />
-    <orderEntry type="library" name="old-locale-1.0.0.7" level="project" />
-    <orderEntry type="library" name="pandoc-2.10.1" level="project" />
-    <orderEntry type="library" name="relude-0.7.0.0" level="project" />
-    <orderEntry type="library" name="shakespeare-2.0.25" level="project" />
-    <orderEntry type="library" name="yaml-0.11.5.0" level="project" />
-    <orderEntry type="library" name="Glob-0.10.1" level="project" />
-    <orderEntry type="library" name="HTTP-4000.3.15" level="project" />
-    <orderEntry type="library" name="HsYAML-0.2.1.0" level="project" />
-    <orderEntry type="library" name="JuicyPixels-3.3.5" level="project" />
-    <orderEntry type="library" name="SHA-1.6.4.4" level="project" />
-    <orderEntry type="library" name="aeson-1.4.7.1" level="project" />
-    <orderEntry type="library" name="aeson-pretty-0.8.8" level="project" />
-    <orderEntry type="library" name="attoparsec-0.13.2.4" level="project" />
-    <orderEntry type="library" name="base64-bytestring-1.0.0.3" level="project" />
-    <orderEntry type="library" name="case-insensitive-1.2.1.0" level="project" />
-    <orderEntry type="library" name="commonmark-0.1.0.2" level="project" />
-    <orderEntry type="library" name="commonmark-extensions-0.2.0.1" level="project" />
-    <orderEntry type="library" name="commonmark-pandoc-0.2.0.1" level="project" />
-    <orderEntry type="library" name="connection-0.3.1" level="project" />
-    <orderEntry type="library" name="doclayout-0.3" level="project" />
-    <orderEntry type="library" name="doctemplates-0.8.2" level="project" />
-    <orderEntry type="library" name="emojis-0.1" level="project" />
-    <orderEntry type="library" name="exceptions-0.10.4" level="project" />
-    <orderEntry type="library" name="haddock-library-1.8.0" level="project" />
-    <orderEntry type="library" name="hslua-1.1.2" level="project" />
-    <orderEntry type="library" name="hslua-module-system-0.2.2" level="project" />
-    <orderEntry type="library" name="hslua-module-text-0.2.1" level="project" />
-    <orderEntry type="library" name="http-client-0.6.4.1" level="project" />
-    <orderEntry type="library" name="http-client-tls-0.3.5.3" level="project" />
-    <orderEntry type="library" name="http-types-0.12.3" level="project" />
-    <orderEntry type="library" name="ipynb-0.1.0.1" level="project" />
-    <orderEntry type="library" name="jira-wiki-markup-1.3.2" level="project" />
-    <orderEntry type="library" name="mtl-2.2.2" level="project" />
-    <orderEntry type="library" name="network-3.1.1.1" level="project" />
-    <orderEntry type="library" name="network-uri-2.6.3.0" level="project" />
-    <orderEntry type="library" name="pandoc-types-1.21" level="project" />
-    <orderEntry type="library" name="parsec-3.1.14.0" level="project" />
-    <orderEntry type="library" name="random-1.1" level="project" />
-    <orderEntry type="library" name="safe-0.3.19" level="project" />
-    <orderEntry type="library" name="scientific-0.3.6.2" level="project" />
-    <orderEntry type="library" name="skylighting-0.8.5" level="project" />
-    <orderEntry type="library" name="skylighting-core-0.8.5" level="project" />
-    <orderEntry type="library" name="syb-0.7.1" level="project" />
-    <orderEntry type="library" name="tagsoup-0.14.8" level="project" />
-    <orderEntry type="library" name="temporary-1.3" level="project" />
-    <orderEntry type="library" name="texmath-0.12.0.3" level="project" />
-    <orderEntry type="library" name="text-conversions-0.3.0" level="project" />
-    <orderEntry type="library" name="unicode-transforms-0.3.7" level="project" />
-    <orderEntry type="library" name="unordered-containers-0.2.10.0" level="project" />
-    <orderEntry type="library" name="xml-1.3.14" level="project" />
-    <orderEntry type="library" name="zip-archive-0.4.1" level="project" />
-    <orderEntry type="library" name="zlib-0.6.2.2" level="project" />
-    <orderEntry type="library" name="transformers-0.5.6.2" level="project" />
-    <orderEntry type="library" name="th-lift-0.8.1" level="project" />
-    <orderEntry type="library" name="vector-0.12.1.2" level="project" />
-    <orderEntry type="library" name="conduit-1.3.2.1" level="project" />
-    <orderEntry type="library" name="libyaml-0.1.2" level="project" />
-    <orderEntry type="library" name="resourcet-1.2.4.2" level="project" />
-    <orderEntry type="library" name="transformers-compat-0.6.5" level="project" />
-    <orderEntry type="library" name="primitive-0.7.0.1" level="project" />
-    <orderEntry type="library" name="base-compat-batteries-0.11.1" level="project" />
-    <orderEntry type="library" name="tagged-0.8.6" level="project" />
-    <orderEntry type="library" name="th-abstraction-0.3.2.0" level="project" />
-    <orderEntry type="library" name="time-compat-1.9.3" level="project" />
-    <orderEntry type="library" name="uuid-types-1.0.3" level="project" />
-    <orderEntry type="library" name="base-compat-0.11.1" level="project" />
-    <orderEntry type="library" name="basement-0.0.11" level="project" />
-    <orderEntry type="library" name="socks-0.6.1" level="project" />
-    <orderEntry type="library" name="tls-1.5.4" level="project" />
-    <orderEntry type="library" name="x509-1.7.5" level="project" />
-    <orderEntry type="library" name="x509-store-1.6.7" level="project" />
-    <orderEntry type="library" name="x509-system-1.6.6" level="project" />
-    <orderEntry type="library" name="x509-validation-1.6.11" level="project" />
-    <orderEntry type="library" name="cookie-0.4.5" level="project" />
-    <orderEntry type="library" name="memory-0.15.0" level="project" />
-    <orderEntry type="library" name="mime-types-0.1.0.9" level="project" />
-    <orderEntry type="library" name="streaming-commons-0.2.2.1" level="project" />
-    <orderEntry type="library" name="cryptonite-0.26" level="project" />
-    <orderEntry type="library" name="QuickCheck-2.13.2" level="project" />
-    <orderEntry type="library" name="integer-logarithms-1.0.3" level="project" />
-    <orderEntry type="library" name="ansi-terminal-0.10.3" level="project" />
-    <orderEntry type="library" name="colour-2.3.5" level="project" />
-    <orderEntry type="library" name="hxt-9.3.1.18" level="project" />
-    <orderEntry type="library" name="regex-pcre-builtin-0.95.1.2.8.43" level="project" />
-    <orderEntry type="library" name="utf8-string-1.0.1.1" level="project" />
-    <orderEntry type="library" name="base16-bytestring-0.1.1.7" level="project" />
-    <orderEntry type="library" name="errors-2.3.0" level="project" />
-    <orderEntry type="library" name="digest-0.0.1.2" level="project" />
-    <orderEntry type="library" name="mono-traversable-1.0.15.1" level="project" />
-    <orderEntry type="library" name="unliftio-core-0.1.2.0" level="project" />
-    <orderEntry type="library" name="base-orphans-0.8.2" level="project" />
-    <orderEntry type="library" name="cereal-0.5.8.1" level="project" />
-    <orderEntry type="library" name="asn1-encoding-0.9.6" level="project" />
-    <orderEntry type="library" name="asn1-types-0.3.4" level="project" />
-    <orderEntry type="library" name="hourglass-0.2.12" level="project" />
-    <orderEntry type="library" name="asn1-parse-0.9.5" level="project" />
-    <orderEntry type="library" name="pem-0.2.4" level="project" />
-    <orderEntry type="library" name="splitmix-0.0.5" level="project" />
-    <orderEntry type="library" name="hxt-charproperties-9.4.0.0" level="project" />
-    <orderEntry type="library" name="hxt-regex-xmlschema-9.2.0.3" level="project" />
-    <orderEntry type="library" name="hxt-unicode-9.0.2.4" level="project" />
-    <orderEntry type="library" name="regex-base-0.94.0.0" level="project" />
-    <orderEntry type="library" name="vector-algorithms-0.8.0.3" level="project" />
   </component>
 </module>
