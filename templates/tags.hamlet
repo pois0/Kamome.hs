@@ -16,7 +16,8 @@ $doctype 5
     <body>
         <header class="top">
             <div class="container">
-                <h1><a href="/">Keys to Descension</a></h1>
+                <h1>
+                    <a href="/">Keys to Descension
         <main class="container">
             <h1 class="tag-header">Tag: #{show tag}
             $forall article <- articles

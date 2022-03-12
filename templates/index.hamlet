@@ -16,7 +16,8 @@ $doctype 5
     <body>
         <header class="top">
             <div class="container">
-                <h1><a href="/">Keys to Descension</a>
+                <h1>
+                    <a href="/">Keys to Descension
         <main class="container">
             $forall article <- articles
                 <div class="article-card">
