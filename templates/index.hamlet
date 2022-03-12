@@ -16,7 +16,7 @@ $doctype 5
     <body>
         <header class="top">
             <div class="container">
-                <h1><a href="/">Keys to Descension</a></h1>
+                <h1><a href="/">Keys to Descension</a>
         <main class="container">
             $forall article <- articles
                 <div class="article-card">
@@ -29,7 +29,7 @@ $doctype 5
             <div class="switcher">
                 $maybe ne <- next
                     <a class="next" href="/#{indexToRelUrl ne}">
-                        &lt; next
+                        &lt; Next
                 $maybe pr <- prev
                     <a class="prev" href="/#{indexToRelUrl pr}">
-                        prev &gt;
+                        Prev &gt;
